@@ -13,6 +13,8 @@ def load_model():
         model = Llama.from_pretrained(
             repo_id="bartowski/Llama-3.2-1B-Instruct-GGUF",
             filename="Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+            n_ctx=2048,  # Set context window to 2048 tokens
+            verbose=False  # Reduce verbose output
         )
         print("GGUF model loaded successfully!")
     return model
